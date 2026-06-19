@@ -1,71 +1,52 @@
-# TP 5 – Modules Python
+# Gestionnaire de Modules et Integration API
 
-## Objectif
+Ce projet est une application pratique visant à renforcer la structuration d'applications Python. Il illustre l'organisation du code en packages, la gestion rigoureuse des imports et l'utilisation d'APIs externes.
 
-Ce TP explore la création, l'organisation et l'utilisation des modules Python dans un projet structuré en packages. On y aborde également les imports relatifs, la gestion des exports avec `__all__`, ainsi que l'utilisation d'un module externe (`requests`) pour effectuer des requêtes HTTP et interroger l'API OpenWeatherMap.
+## Objectifs du projet
 
----
+- Structuration : Creation et organisation de packages et sous-packages.
+- Gestion des imports : Maitrise des imports absolus, relatifs et controle de l'espace de noms via __all__.
+- Integration d'API : Utilisation de la librairie requests pour la communication HTTP avec OpenWeatherMap.
+- Gestion des dependances : Configuration d'un fichier requirements.txt pour la portabilite du projet.
 
 ## Structure du projet
 
-```
-mon_projet/
-├── __init__.py
-├── main.py
-├── main2.py
-├── main3.py
-├── meteo_main.py
-├── requirements.txt
-├── maths/
-│   ├── __init__.py
-│   ├── operations.py
-│   └── statistiques.py
-├── utils/
-│   ├── __init__.py
-│   └── string_utils.py
-└── captures/
-```
-
----
+TD5-Python/
+├── maths/            # Package dedie aux operations mathematiques
+├── utils/            # Package utilitaire pour la manipulation de donnees
+├── main.py           # Point d'entree principal de l'application
+├── meteo_main.py     # Script de consultation d'informations meteorologiques
+├── requirements.txt  # Liste des dependances techniques
+└── ...
 
 ## Installation
 
-### 1. (Optionnel) Créer un environnement virtuel
+1. Cloner le depot :
+   git clone https://github.com/Vinsmoke-Fatou/TD5-Python.git
+   cd TD5-Python
 
-```bash
-python -m venv venv
-source venv/bin/activate      # Linux / macOS
-venv\Scripts\activate         # Windows
-```
+2. Creer et activer un environnement virtuel :
+   python -m venv venv
+   source venv/bin/activate
 
-### 2. Installer les dépendances
+3. Installer les dependances :
+   pip install -r requirements.txt
 
-```bash
-pip install -r requirements.txt
-```
+## Utilisation
 
----
+Le projet permet d'executer differentes logiques selon le fichier cible :
 
-## Exécution
+- Pour lancer le programme principal :
+  python main.py
 
-Depuis le dossier **parent** de `mon_projet/` :
+- Pour tester la recuperation de donnees meteo :
+  python meteo_main.py
 
-```bash
-# main.py : opérations, statistiques, chaînes, requête HTTP
-python mon_projet/main.py
+## Technologies utilisees
 
-# main2.py : import relatif + somme des carrés
-python -m mon_projet.main2
-
-# main3.py : test de __all__
-python mon_projet/main3.py
-
-# meteo_main.py : météo en temps réel via OpenWeatherMap
-python mon_projet/meteo_main.py
-```
+- Python 3.x
+- Requests (gestion des requetes HTTP)
+- OpenWeatherMap API
 
 ---
-
-## Captures d'écran
-
-Les captures d'exécution sont disponibles dans le dossier `captures/`.
+Projet realise dans le cadre du cursus de genie logiciel.
